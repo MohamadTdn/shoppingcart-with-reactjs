@@ -6,6 +6,9 @@ import Products from '../Products/Products'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Table from 'react-bootstrap/Table';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Shop() {
   return (
@@ -37,6 +40,36 @@ export default function Shop() {
           </Row>
         </Container>
          <h1>Cart</h1>
+         <div className='Cart'>
+         <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Count</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img style={{width: '80px'}} src="assets/banner.jfif" alt="" />
+                </td>
+                <td>Shoe</td>
+                <td>400 $</td>
+                <td>
+                  <input type="number" style={{width: '70px'}} />
+                </td>
+                <td>
+                <Button variant="contained" startIcon={<DeleteIcon />} color='error' size="small">
+                  Delete
+                </Button>
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+         </div>
       </Container>
     </div>
   )
