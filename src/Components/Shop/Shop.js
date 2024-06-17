@@ -4,6 +4,8 @@ import NavMenu from '../NavMenu/NavMenu'
 import Banner from '../Banner/Banner'
 import Products from '../Products/Products'
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export default function Shop() {
   return (
@@ -12,7 +14,28 @@ export default function Shop() {
         <NavMenu />
         <Banner />
         <h1>Products</h1>
-        <Products />
+        <Container>
+          <Row>
+            <Col xs={12} md={6} lg={3}>
+              <Products />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Products />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Products />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Products />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Products />
+            </Col>
+            <Col xs={12} md={6} lg={3}>
+              <Products />
+            </Col>
+          </Row>
+        </Container>
       </Container>
     </div>
   )

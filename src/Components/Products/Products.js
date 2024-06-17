@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 
 export default function Products() {
@@ -24,7 +25,9 @@ export default function Products() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+      <Button variant="contained" endIcon={<AddIcon />}>
+        Add To Cart
+      </Button>
       </CardActions>
     </Card>
   )
