@@ -9,19 +9,18 @@ import Typography from '@mui/material/Typography';
 
 export default function Products() {
   return (
-    <Card className='mt-5' style={{backgroundColor: 'blue'}} sx={{ maxWidth: 250 }}>
+    <Card className='mt-5' style={{backgroundColor: '#a09e9e'}} sx={{ maxWidth: 250 }}>
       <CardMedia
         sx={{ height: 240 }}
         image="assets/banner.jfif"
         title="green iguana"
       />
       <CardContent>
-        <Typography className='text-white' gutterBottom variant="h5" component="div">
-          Lizard
+        <Typography gutterBottom variant="h5" component="div">
+          Shoe
         </Typography>
-        <Typography variant="body2" className='text-white'>
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+        <Typography variant="h5" >
+          400$
         </Typography>
       </CardContent>
       <CardActions>

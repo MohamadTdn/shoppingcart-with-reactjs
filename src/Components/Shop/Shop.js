@@ -16,26 +16,27 @@ export default function Shop() {
         <h1>Products</h1>
         <Container>
           <Row>
-            <Col xs={12} md={6} lg={3}>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <Products />
             </Col>
-            <Col xs={12} md={6} lg={3}>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <Products />
             </Col>
-            <Col xs={12} md={6} lg={3}>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <Products />
             </Col>
-            <Col xs={12} md={6} lg={3}>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <Products />
             </Col>
-            <Col xs={12} md={6} lg={3}>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <Products />
             </Col>
-            <Col xs={12} md={6} lg={3}>
+            <Col xs={12} sm={6} md={4} lg={3}>
               <Products />
             </Col>
           </Row>
         </Container>
+         <h1>Cart</h1>
       </Container>
     </div>
   )
