@@ -6,12 +6,12 @@ import Typography from '@mui/material/Typography';
 
 export default function Banner() {
   return (
-    <Container fluid className='mt-3'>
+    <Container fluid className='mt-3 text-center'>
     <Row>
-      <Col>
+      <Col xs={0} lg={6}>
         <img style={{width: '500px' , height: '350px'}} src="assets/banner.jfif" alt="" />
       </Col>
-      <Col>
+      <Col xs={12} lg={6}>
       <Typography className='pt-4' style={{lineHeight: '50px'}} variant="h5" gutterBottom>
         body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
         blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur,
