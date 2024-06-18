@@ -7,20 +7,20 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 
-export default function Products() {
+export default function Products(props) {
   return (
-    <Card className='mt-5' style={{backgroundColor: '#a09e9e'}} sx={{ maxWidth: 250 }}>
+    <Card className='mt-5' style={{backgroundColor: '#e3e3e3'}} sx={{ maxWidth: 250 }}>
       <CardMedia
         sx={{ height: 240 }}
-        image="assets/banner.jfif"
+        image={props.imgSrc}
         title="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Shoe
+          {props.productName}
         </Typography>
         <Typography variant="h5" >
-          400$
+          {props.productPrice} $
         </Typography>
       </CardContent>
       <CardActions>
