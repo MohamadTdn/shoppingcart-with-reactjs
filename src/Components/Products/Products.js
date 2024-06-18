@@ -8,12 +8,16 @@ import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 
 export default function Products(props) {
+
+  const addHandler = (id) => {
+    props.onAdd(id)
+  }
+
   return (
     <Card className='mt-5' style={{backgroundColor: '#e3e3e3'}} sx={{ maxWidth: 250 }}>
       <CardMedia
         sx={{ height: 240 }}
         image={props.imgSrc}
-        title="green iguana"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -24,7 +28,7 @@ export default function Products(props) {
         </Typography>
       </CardContent>
       <CardActions>
-      <Button variant="contained" endIcon={<AddIcon />}>
+      <Button onClick={() => addHandler(props.id)} variant="contained" endIcon={<AddIcon />}>
         Add To Cart
       </Button>
       </CardActions>

@@ -2,15 +2,15 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-export default function CartItem() {
+export default function CartItem(props) {
   return (
     <>
         <tr>
             <td>
-                <img style={{width: '80px'}} src="assets/banner.jfif" alt="" />
+                <img style={{width: '80px'}} src={props.imgSrc} alt="" />
             </td>
-            <td>Shoe</td>
-            <td>400 $</td>
+            <td>{props.productName}</td>
+            <td>{props.productPrice} $</td>
             <td>
                 <input type="number" style={{width: '70px'}} />
             </td>

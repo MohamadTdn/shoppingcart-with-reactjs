@@ -25,6 +25,23 @@ export default function Shop() {
     {id: 10, imgSrc: 'assets/prod3.jfif', productName: 'Nike Limited Edition' , productPrice: 1000 , count: 1},
   ])
 
+  const [cart, setCart] = useState([])
+
+  const addToCart = (productId) => {
+    let allProducts = [...products]
+    let mainCart = [...cart]
+    let targetProduct = allProducts.find(product => {
+      return productId === product.id
+    })
+
+    mainCart.push(targetProduct)
+
+    setCart(prevState => {
+      return prevState = mainCart
+    })
+
+  }
+
   return (
     <div className='Shop'> 
       <Container fluid>
@@ -36,7 +53,7 @@ export default function Shop() {
             {products.map(product => {
               return (
                 <Col key={product.id} xs={12} sm={6} md={4} lg={3}>
-                  <Products {...product} />
+                  <Products onAdd={addToCart} {...product} />
                 </Col>
               )
             })}
@@ -56,11 +73,14 @@ export default function Shop() {
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody>
-                <CartItem />
-                <CartItem />
-                <CartItem />
+              <tbody className='CartItems'>
+                {cart.map(cartItem => {
+                  return (
+                    <CartItem key={cartItem.id} {...cartItem} />
+                  )
+                })}
               </tbody>
+              <h4 className='Total-price'>Total : {0}</h4>
               </Table>
             </Col>
           </Row>
