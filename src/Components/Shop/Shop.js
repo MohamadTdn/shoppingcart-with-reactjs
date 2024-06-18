@@ -9,7 +9,6 @@ import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import CartItem from '../CartItem/CartItem'
 import { useState } from 'react'
-import { toContainHTML } from '@testing-library/jest-dom/matchers'
 
 export default function Shop() {
 
