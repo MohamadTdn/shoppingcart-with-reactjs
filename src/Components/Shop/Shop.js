@@ -9,6 +9,7 @@ import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import CartItem from '../CartItem/CartItem'
 import { useState } from 'react'
+import { toContainHTML } from '@testing-library/jest-dom/matchers'
 
 export default function Shop() {
 
@@ -44,14 +45,17 @@ export default function Shop() {
     })
 
     mainCart.forEach(product => {
-
        totalPrice += product.productPrice * product.count
+    })
 
+    setTotal(prevState => {
+      return prevState = totalPrice
     })
   }
 
   const removeFromCart = (productId) => {
     let mainCart = [...cart]
+    let totalPrice = 0
 
     let targetProductIndex = mainCart.findIndex(product => {
       return productId === product.id
@@ -61,6 +65,14 @@ export default function Shop() {
 
     setCart(prevState => {
       return prevState = mainCart
+    })
+
+    mainCart.forEach(product => {
+      totalPrice += product.productPrice * product.count
+   })
+
+    setTotal(prevState => {
+      return prevState = totalPrice
     })
   }
 
