@@ -3,6 +3,11 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function CartItem(props) {
+
+  const removeHandler = (id) => {
+    props.onRemove(id)
+  }
+
   return (
     <>
         <tr>
@@ -15,7 +20,7 @@ export default function CartItem(props) {
                 <input type="number" style={{width: '70px'}} />
             </td>
             <td>
-                <Button variant="contained" startIcon={<DeleteIcon />} color='error' size="small">
+                <Button onClick={() => removeHandler(props.id)} variant="contained" startIcon={<DeleteIcon />} color='error' size="small">
                     Delete
                 </Button>
             </td>

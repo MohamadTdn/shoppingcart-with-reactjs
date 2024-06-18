@@ -39,7 +39,20 @@ export default function Shop() {
     setCart(prevState => {
       return prevState = mainCart
     })
+  }
 
+  const removeFromCart = (productId) => {
+    let mainCart = [...cart]
+
+    let targetProductIndex = mainCart.findIndex(product => {
+      return productId === product.id
+    })
+
+    mainCart.splice(targetProductIndex, 1)
+
+    setCart(prevState => {
+      return prevState = mainCart
+    })
   }
 
   return (
@@ -76,7 +89,7 @@ export default function Shop() {
               <tbody className='CartItems'>
                 {cart.map(cartItem => {
                   return (
-                    <CartItem key={cartItem.id} {...cartItem} />
+                    <CartItem onRemove={removeFromCart} key={cartItem.id} {...cartItem} />
                   )
                 })}
               </tbody>
