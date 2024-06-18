@@ -27,17 +27,26 @@ export default function Shop() {
 
   const [cart, setCart] = useState([])
 
+  const [total, setTotal] = useState(0)
+
   const addToCart = (productId) => {
     let allProducts = [...products]
     let mainCart = [...cart]
     let targetProduct = allProducts.find(product => {
       return productId === product.id
     })
+    let totalPrice = 0
 
     mainCart.push(targetProduct)
 
     setCart(prevState => {
       return prevState = mainCart
+    })
+
+    mainCart.forEach(product => {
+
+       totalPrice += product.productPrice * product.count
+
     })
   }
 
@@ -93,7 +102,7 @@ export default function Shop() {
                   )
                 })}
               </tbody>
-              <h4 className='Total-price'>Total : {0}</h4>
+              <h4 className='Total-price'>Total : {total}</h4>
               </Table>
             </Col>
           </Row>
